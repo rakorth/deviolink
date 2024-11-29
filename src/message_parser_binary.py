@@ -103,8 +103,8 @@ def process_ledmatrix_warning_signal(packet: list[int]):
 # 1: int8  | matrix index
 # 2: int16 | x value
 # 3: int16 | x value
-# 4: int8  | y value
-# 5: int8  | y value
+# 4: int16 | y value
+# 5: int16 | y value
 def process_ledmatrix_set_pixel_on(packet: list[int]):
     if len(packet) != 6:
         raise InvalidPacketException(f"Invalid ledmatrix set pixel on packet length:%d expected 6", len(packet))
@@ -157,7 +157,7 @@ def process_neopixel_clear_packet(packet: list[int]):
 
 
 # Packet structure
-# 0: int8  | static byte = 10
+# 0: int8  | static byte = 11
 # 1: int8  | hardware pin
 def process_neopixel_fill_red_packet(packet: list[int]):
     if len(packet) != 2:
@@ -170,7 +170,7 @@ def process_neopixel_fill_red_packet(packet: list[int]):
 
 
 # Packet structure
-# 0: int8  | static byte = 10
+# 0: int8  | static byte = 12
 # 1: int8  | hardware pin
 def process_neopixel_fill_green_packet(packet: list[int]):
     if len(packet) != 2:
@@ -183,7 +183,7 @@ def process_neopixel_fill_green_packet(packet: list[int]):
 
 
 # Packet structure
-# 0: int8  | static byte = 10
+# 0: int8  | static byte = 13
 # 1: int8  | hardware pin
 def process_neopixel_fill_blue_packet(packet: list[int]):
     if len(packet) != 2:
@@ -196,7 +196,7 @@ def process_neopixel_fill_blue_packet(packet: list[int]):
 
 
 # Packet structure
-# 0: int8  | static byte = 8
+# 0: int8  | static byte = 14
 # 1: int8  | hardware pin
 # 2: int16 | pixel index
 # 3: int16 | pixel index

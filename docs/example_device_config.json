@@ -1,0 +1,27 @@
+{
+  "device_name": "prototype deviolink board",
+  "led_matrix_configs": [
+    {
+      "clock_pin": "IO9",
+      "mosi_pin": "IO7",
+      "chip_select_pin": "IO8",
+      "width": 32,
+      "height": 8
+    }
+  ],
+  "neopixel_configs": [
+    {
+      "pin_num": "IO6",
+      "length": 19
+    }
+  ],
+  "servo_configs": [
+    {
+      "scl_pin": "IO3",
+      "sda_pin": "IO2",
+      "channels": [
+        0
+      ]
+    }
+  ]
+}

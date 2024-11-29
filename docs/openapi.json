@@ -1,0 +1,64 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Deviolink",
+    "description": "Http requests for deviolink board",
+    "version": "0.0.1"
+  },
+  "servers": [
+    {
+      "description": "Local dev server (Change for your environment)",
+      "url": "http://192.168.3.113:5000"
+    }
+  ],
+  "paths": {
+    "/info": {
+      "get": {
+        "summary": "System Info",
+        "description": "Gets some general system info from the board"
+      }
+    },
+    "/config": {
+      "get": {
+        "summary": "Device Config",
+        "description": "Get current device config used to setup deviolink board"
+      }
+    },
+    "/logs": {
+      "get": {
+        "summary": "Logging",
+        "description": "All logging services setup in system and current level"
+      },
+      "put": {
+        "summary": "Logging",
+        "description": "All logging services setup in system and current level",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "description": "Name of logger",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "level",
+            "description": "logging level",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/websocket": {
+      "options": {
+        "summary": "Websocket",
+        "description": "Websocket endpoint. OpenAPI doesnt have a way to declare this correctly"
+      }
+    }
+  }
+}

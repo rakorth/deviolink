@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Json schema for device_config.json",
+  "type": "object",
+  "properties": {
+    "device_name": {
+      "type": "string",
+      "description": "User supplied name of device. Useful to display to the user instead of hardware id"
+    },
+    "led_matrix_configs": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "clock_pin": {
+              "type": "string",
+              "description": "Name of SPI pin on board.  Ex: I09, A3, D46"
+            },
+            "mosi_pin": {
+              "type": "string",
+              "description": "Name of SPI pin on board.  Ex: I09, A3, D46"
+            },
+            "chip_select_pin": {
+              "type": "string",
+              "description": "Name of SPI pin on board.  Ex: I09, A3, D46"
+            },
+            "width": {
+              "type": "integer",
+              "description": "Total width of all linked led matrix boards (Usually 8 x num of led matrix squares)"
+            },
+            "height": {
+              "type": "integer",
+              "description": "Total height of all linked led matrix boards. (Usually 8)"
+            }
+          },
+          "required": [
+            "clock_pin",
+            "mosi_pin",
+            "chip_select_pin",
+            "width",
+            "height"
+          ]
+        }
+      ]
+    },
+    "neopixel_configs": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "pin_num": {
+              "type": "string",
+              "description": "Name of pin on board.  Ex: I09, A3, D46"
+            },
+            "length": {
+              "type": "integer",
+              "description": "Number of neopixels in strip"
+            }
+          },
+          "required": [
+            "pin_num",
+            "length"
+          ]
+        }
+      ]
+    },
+    "servo_configs": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "scl_pin": {
+              "type": "string",
+              "description": "Name of I2C pin on board.  Ex: I09, A3, D46"
+            },
+            "sda_pin": {
+              "type": "string",
+              "description": "Name of I2C pin on board.  Ex: I09, A3, D46"
+            },
+            "channels": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "integer",
+                  "description": "Channels used on max7219 board"
+                }
+              ]
+            }
+          },
+          "required": [
+            "scl_pin",
+            "sda_pin",
+            "channels"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "device_name",
+    "led_matrix_configs",
+    "neopixel_configs",
+    "servo_configs"
+  ]
+}
+
