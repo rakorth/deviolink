@@ -16,7 +16,7 @@ from views.view_system_info import SystemInfoView
 #
 
 SYSTEM_IS_SAFE_MODE = True
-SYSTEM_SAFE_MODE_ERR_MESSAGE: str
+SYSTEM_SAFE_MODE_ERR_MESSAGE: str = ""
 DEVICE_CONFIG = None
 
 
