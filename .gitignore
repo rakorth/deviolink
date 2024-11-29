@@ -14,7 +14,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -159,4 +158,14 @@ cython_debug/
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
+.idea/
+
+# CircuitPython specific files
+/src/.fseventsd/
+/src/sd/
+/src/System Volume Information/
+/src/.metadata_never_index
+/src/.Trash-1000
+/src/.Trashes
+/src/boot_out.txt
+/src/device_config.json
