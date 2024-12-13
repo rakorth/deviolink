@@ -10,8 +10,8 @@
     * [Windows Development - Pycharm](#windows-development---pycharm)
 <!-- TOC -->
 CircuitPython project for controlling hardware components via websocket / rest interfaces
-Currently Supports:
 
+Currently Supports:
 * NeoPixels / WS2812 
 * Led Matrix's using the MAX7219 chipset
 * Servo motors vis I2C with a PCA9685 driver
