@@ -22,6 +22,7 @@ Written to reduce data transmission size when sending messages to deviolink boar
 
 Moves a servo to a specified degree
 index is determined by order of `channels` in the `servo_configs` in `device-config`
+
 ---
 
 ### Show Led Matrix Packet
@@ -33,6 +34,7 @@ index is determined by order of `channels` in the `servo_configs` in `device-con
 
 Displays all cached matrix pixels  
 index is determined by order of `led_matrix_configs` in `device-config`
+
 ---
 
 ### Clear Led Matrix Packet
@@ -44,6 +46,7 @@ index is determined by order of `led_matrix_configs` in `device-config`
 
 Clears all pixels in a led matrix
 index is determined by order of `led_matrix_configs` in `device-config`
+
 ---
 
 ### Warning Led Matrix Packet
@@ -55,6 +58,7 @@ index is determined by order of `led_matrix_configs` in `device-config`
 
 Display !'s all along the led matrix
 index is determined by order of `led_matrix_configs` in `device-config`
+
 ---
 
 ### Set Led Matrix Pixel On Packet
@@ -70,6 +74,7 @@ index is determined by order of `led_matrix_configs` in `device-config`
 
 Set individual pixel on a LED matrix to ON
 index is determined by order of `led_matrix_configs` in `device-config`
+
 ---
 
 ### Set Led Matrix Pixel Off Packet
@@ -85,6 +90,7 @@ index is determined by order of `led_matrix_configs` in `device-config`
 
 Set individual pixel on a LED matrix to OFF
 index is determined by order of `led_matrix_configs` in `device-config`
+
 ---
 
 ### Show Neopixel Packet
@@ -96,6 +102,7 @@ index is determined by order of `led_matrix_configs` in `device-config`
 
 Displays all cached neopixels in strip
 index is determined by order of `neopixel_configs` in `device-config`
+
 ---
 
 ### Clear Neopixel Packet
@@ -107,6 +114,7 @@ index is determined by order of `neopixel_configs` in `device-config`
 
 Clears all colors neopixels in strip
 index is determined by order of `neopixel_configs` in `device-config`
+
 ---
 
 ### Fill Neopixel Strip To Red Packet
@@ -118,6 +126,7 @@ index is determined by order of `neopixel_configs` in `device-config`
 
 Sets all neopixels in strip to 255,0,0
 index is determined by order of `neopixel_configs` in `device-config`
+
 ---
 
 ### Fill Neopixel Strip To Green Packet
@@ -129,6 +138,7 @@ index is determined by order of `neopixel_configs` in `device-config`
 
 Sets all neopixels in strip to 0,255,0
 index is determined by order of `neopixel_configs` in `device-config`
+
 ---
 
 ### Fill Neopixel Strip To Blue Packet
@@ -140,6 +150,7 @@ index is determined by order of `neopixel_configs` in `device-config`
 
 Sets all neopixels in strip to 0,0,255
 index is determined by order of `neopixel_configs` in `device-config`
+
 ---
 
 ### Set Neopixel Color Packet
