@@ -23,5 +23,11 @@
         0
       ]
     }
+  ],
+  "switch_configs": [
+    {
+      "pin_num": "IO4",
+      "status": true
+    }
   ]
 }
