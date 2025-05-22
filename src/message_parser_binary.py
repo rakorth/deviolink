@@ -1,7 +1,7 @@
 from adafruit_httpserver import Websocket
 
 import error_handler
-from services import service_led_matrix, service_servo_motor, service_logging as log_factory, service_neopixel
+from services import service_led_matrix, service_servo_motor, service_logging as log_factory, service_neopixel, service_switch
 
 logger = log_factory.create_logger("message_parser_binary")
 
@@ -53,6 +53,10 @@ def process_packet(packet):
         process_neopixel_fill_blue_packet(packet)
     elif command == 14:
         process_neopixel_set_color_packet(packet)
+    elif command == 15:
+        process_switch_status_on(packet)
+    elif command == 16:
+        process_switch_status_off(packet)
     else:
         logger.warning("Invalid command packet value: %d", command)
 
@@ -216,6 +220,29 @@ def process_neopixel_set_color_packet(packet: list[int]):
     b = packet[6]
 
     service_neopixel.set_neopixel_color(pin_num, index, r, g, b)
+
+
+# Packet structure
+# 0: int8  | static byte = 15
+# 1: int8  | index
+def process_switch_status_on(packet: list[int]):
+    if len(packet) != 2:
+        logger.warning("Invalid switch status packet length:%d expected 2", len(packet))
+        return
+    index = packet[1]
+    service_switch.set_switch(index, True)
+
+
+# Packet structure
+# 0: int8  | static byte = 16
+# 1: int8  | index
+def process_switch_status_off(packet: list[int]):
+    if len(packet) != 2:
+        logger.warning("Invalid switch status packet length:%d expected 2", len(packet))
+        return
+    index = packet[1]
+    service_switch.set_switch(index, False)
+
 
 
 class InvalidPacketException(Exception):

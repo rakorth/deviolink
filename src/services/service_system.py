@@ -9,6 +9,7 @@ from views.config_device import DeviceConfig
 from views.config_led_matrix import LedMatrixConfig
 from views.config_neopixel import NeopixelConfig
 from views.config_servo import ServoConfig
+from views.config_switch import SwitchConfig
 from views.view_system_info import SystemInfoView
 
 #
@@ -90,12 +91,22 @@ def _load_device_config_from_filesystem() -> DeviceConfig:
                 )
                 servo_configs.append(servo)
 
+            # Parse Switch configurations
+            switch_configs = []
+            for switch_config in config_dict.get("switch_configs", []):
+                switch = SwitchConfig(
+                    pin_num=switch_config["pin_num"],
+                    status=switch_config["status"]
+                )
+                switch_configs.append(switch)
+
             # Create and return the DeviceConfig object
             return DeviceConfig(
                 device_name=config_dict["device_name"],
                 led_matrix_configs=led_matrix_configs,
                 neopixel_configs=neopixel_configs,
                 servo_configs=servo_configs,
+                switch_configs=switch_configs,
             )
 
         except KeyError as e:

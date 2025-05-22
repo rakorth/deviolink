@@ -97,13 +97,36 @@
           ]
         }
       ]
+    },
+    "switch_configs": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "pin_num": {
+              "type": "string",
+              "description": "Name of pin on board.  Ex: I09, A3, D46"
+            },
+            "status": {
+              "type": "boolean",
+              "description": "Pin status on system startup"
+            }
+          },
+          "required": [
+            "pin_num",
+            "status"
+          ]
+        }
+      ]
     }
   },
   "required": [
     "device_name",
     "led_matrix_configs",
     "neopixel_configs",
-    "servo_configs"
+    "servo_configs",
+    "switch_configs"
   ]
 }
 

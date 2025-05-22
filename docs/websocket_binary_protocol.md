@@ -168,4 +168,27 @@ index is determined by order of `neopixel_configs` in `device-config`
 Sets individual neopixel in strip to rgb value
 index is determined by order of `neopixel_configs` in `device-config`
 
+---
+
+### Set Switch On
+
+| byte index | size  | type    | description       | value |
+|------------|-------|---------|-------------------|-------|
+| 0          | int8  | static  | Command Byte      | 15    |
+| 1          | int8  | dynamic | index of pin      |       |
+
+---
+
+### Set Switch Off
+
+| byte index | size  | type    | description       | value |
+|------------|-------|---------|-------------------|-------|
+| 0          | int8  | static  | Command Byte      | 16    |
+| 1          | int8  | dynamic | index of pin      |       |
+
+
+
+
+
+
 

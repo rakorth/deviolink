@@ -1,5 +1,5 @@
 class NeopixelConfig:
-    def __init__(self, pin_num, length):
+    def __init__(self, pin_num: str, length: int):
         self.pin_num = pin_num
         self.length = length
 

@@ -3,7 +3,7 @@ import adafruit_logging as logging
 import webserver
 from logging_handler_websocket import WebsocketHandler
 from services import service_system, service_led_matrix, service_servo_motor, service_logging as log_factory, \
-    service_neopixel
+    service_neopixel, service_switch
 
 logger = log_factory.create_logger("device_init_service")
 
@@ -40,3 +40,6 @@ def _configure_devices():
 
     for servo_config in device_config.servo_configs:
         service_servo_motor.add_i2c_servo_controller(servo_config.scl_pin, servo_config.sda_pin, servo_config.channels)
+
+    for switch_config in device_config.switch_configs:
+        service_switch.add_switch(switch_config.pin_num, switch_config.status)
